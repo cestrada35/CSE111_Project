@@ -127,7 +127,15 @@ SELECT *
 FROM region;
 
 -- RANDOM SQL COMMANDS FOR VARIETY--
+INSERT INTO Region(r_regionkey, r_name)
+VALUES (5, "ANTARCTICA")
 
+UPDATE Region
+SET r_name = "Poland"
+WHERE r_regionkey = 5
+
+DELETE FROM Region
+WHERE r_name = "Poland"
 
 -- DELETING TABLES --
 DROP TABLE Game;
