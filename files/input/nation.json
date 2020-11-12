@@ -1,0 +1,45 @@
+{
+    
+    "Nations":[
+            {
+            "n_nationkey": 0,
+            "n_name": "ITALY",
+            "n_regionkey": 3}
+            ,
+            {
+            "n_nationkey": 1,
+            "n_name": "JAPAN",
+            "n_regionkey": 2}
+            ,
+            {
+            "n_nationkey": 2,
+            "n_name": "SCOTLAND",
+            "n_regionkey": 3}
+            ,
+            {
+            "n_nationkey": 3,
+            "n_name": "SOUTH KOREA",
+            "n_regionkey": 2}
+            ,
+            {
+            "n_nationkey": 4,
+            "n_name": "SWEDEN",
+            "n_regionkey": 3}
+            ,
+            {
+            "n_nationkey": 5,
+            "n_name": "UNITED KINGDOM",
+            "n_regionkey": 3}
+            ,
+            {
+            "n_nationkey": 6,
+            "n_name": "UNITED STATES",
+            "n_regionkey": 1}
+            ,
+            {
+            "n_nationkey": 7,
+            "n_name": "POLAND",
+            "n_regionkey": 3}
+            
+    ]
+}

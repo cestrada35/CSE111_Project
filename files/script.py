@@ -24,16 +24,15 @@ def closeConnection(_conn, _dbFile):
     except Error as e:
         print(e)
 
-def readJson(jsf):
+def readJson(js):
     print("++++++++++++++++++++++++++++++++++")
-    print("Reading games from json file: ")
+    print("Reading from json file: ")
     try:
         #load json game objects
-        print("Successfully read games from json file")
-        return json.load(jsf)
+        print("Successfully read from json file")
+        return json.load(js)
     except Error as e:
         print(e)
-
 
 def createTable(_conn):
     print("++++++++++++++++++++++++++++++++++")
@@ -89,7 +88,6 @@ def createTable(_conn):
         _conn.rollback()
         print(e)
 
-
 def dropTable(_conn):
     print("++++++++++++++++++++++++++++++++++")
     print("Deleting tables")
@@ -113,7 +111,6 @@ def dropTable(_conn):
         _conn.rollback()
         print(e)
 
-
 def populateGameTable(_conn, games):
     print("++++++++++++++++++++++++++++++++++")
     print("Populating Game table")
@@ -129,6 +126,66 @@ def populateGameTable(_conn, games):
         _conn.rollback()
         print(e)
 
+def populatePublisherTable(_conn, publishers):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Populating Publisher table")
+
+    try:
+        for pub in publishers['Publishers']:
+            print("Inserting " + pub['p_publisher'] + " into database")
+            sql = "INSERT INTO Publisher VALUES (?, ?, ?, ?, ?);"
+            _conn.execute(sql, (pub['p_publisher'],pub['p_doc'],pub['p_employees'],pub['p_nationkey'],pub['p_networth']))
+            _conn.commit()
+        print ("Publisher table populated")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+
+def populateDeveloperTable(_conn, developers):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Populating Developer table")
+
+    try:
+        for dev in developers['Developer']:
+            print("Inserting " + dev['d_developer'] + " into database")
+            sql = "INSERT INTO Developer VALUES (?, ?, ?, ?, ?);"
+            _conn.execute(sql, (dev['d_developer'],dev['d_doc'],dev['d_employees'],dev['d_nationkey'],dev['d_networth']))
+            _conn.commit()
+        print ("Developer table populated")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+
+def populateNationTable(_conn, nations):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Populating Nation table")
+
+    try:
+        for nat in nations['Nations']:
+            print("Inserting " + nat['n_name'] + " into database")
+            sql = "INSERT INTO Nation VALUES (?, ?, ?);"
+            _conn.execute(sql, (nat['n_nationkey'],nat['n_name'],nat['n_regionkey']))
+            _conn.commit()
+        print ("Nation table populated")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+
+def populateRegionTable(_conn, regions):
+    print("++++++++++++++++++++++++++++++++++")
+    print("Populating Region table")
+
+    try:
+        for reg in regions['Region']:
+            print("Inserting " + reg['r_name'] + " into database")
+            sql = "INSERT INTO Region VALUES (?, ?);"
+            _conn.execute(sql, (reg['r_regionkey'],reg['r_name']))
+            _conn.commit()
+        print ("Region table populated")
+    except Error as e:
+        _conn.rollback()
+        print(e)
+
 
 
 def main():
@@ -140,14 +197,29 @@ def main():
     # open and read data from json file
     jsg = open('input/games.json')
     games = readJson(jsg)
+    jsp = open('input/publisher.json')
+    publishers = readJson(jsp)
+    jsd = open('input/developer.json')
+    developers = readJson(jsd)
+    jsn = open('input/nation.json')
+    nations = readJson(jsn)
+    jsr = open('input/region.json')
+    regions = readJson(jsr)
 
     with conn:
         dropTable(conn)
         createTable(conn)
         populateGameTable(conn, games)
-
+        populatePublisherTable(conn, publishers)
+        populateDeveloperTable(conn, developers)
+        populateNationTable(conn, nations)
+        populateRegionTable(conn, regions)
     # close connections for practice's sake
     jsg.close()
+    jsp.close()
+    jsd.close()
+    jsn.close()
+    jsr.close()
     closeConnection(conn, database)
 
 if __name__ == '__main__':

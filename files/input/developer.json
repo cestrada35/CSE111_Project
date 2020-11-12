@@ -1,0 +1,103 @@
+{
+    "Developer":[
+            {
+            "d_developer": "Mojang Studios",
+            "d_doc": "2009-05-01",
+            "d_employees": 70,
+            "d_nationkey": 4,
+            "d_networth": 1500000000}
+            ,
+            {
+            "d_developer": "Rockstar North",
+            "d_doc": "2001-11-01",
+            "d_employees": 650,
+            "d_nationkey": 5,
+            "d_networth": 3500000000}
+            ,
+            {
+            "d_developer": "EA Mobile",
+            "d_doc": "2004-01-01",
+            "d_employees": 800,
+            "d_nationkey": 6,
+            "d_networth": 5500000000}
+            ,
+            {
+            "d_developer": "Nintendo EAD",
+            "d_doc": "1983-09-30",
+            "d_employees": 6200,
+            "d_nationkey": 1,
+            "d_networth": 85000000000}
+            ,
+            {
+            "d_developer": "PUBG Corporation",
+            "d_doc": "2017-09-01",
+            "d_employees": 1000,
+            "d_nationkey": 3,
+            "d_networth": 4600000000}
+            ,
+            {
+            "d_developer": "Game Freak",
+            "d_doc": "1989-04-26",
+            "d_employees": 143,
+            "d_nationkey": 1,
+            "d_networth": 10000000}
+            ,
+            {
+            "d_developer": "Nintendo R&D1",
+            "d_doc": "1972-01-01",
+            "d_employees": 100,
+            "d_nationkey": 1,
+            "d_networth": 85000000000}
+            ,
+            {
+            "d_developer": "Namco",
+            "d_doc": "1955-06-01",
+            "d_employees": 1066,
+            "d_nationkey": 1,
+            "d_networth": 6400000000}
+            ,
+            {
+            "d_developer": "Rockstar Studios",
+            "d_doc": "1998-12-01",
+            "d_employees": 2000,
+            "d_nationkey": 6,
+            "d_networth": 3500000000}
+            ,
+            {
+            "d_developer": "Re-Logic",
+            "d_doc": "2011-01-01",
+            "d_employees": 10,
+            "d_nationkey": 6,
+            "d_networth": 100000000}
+            ,
+            {
+            "d_developer": "Bethesda Game Studios",
+            "d_doc": "2001-01-01",
+            "d_employees": 400,
+            "d_nationkey": 6,
+            "d_networth": 3000000000}
+            ,
+            {
+            "d_developer": "Blizzard Entertainment",
+            "d_doc": "1991-02-01",
+            "d_employees": 4700,
+            "d_nationkey": 6,
+            "d_networth": 20000000000}
+            ,
+            {
+            "d_developer": "CD Projekt Red",
+            "d_doc": "2002-02-01",
+            "d_employees": 1111,
+            "d_nationkey": 7,
+            "d_networth": 2300000000}
+            ,
+            {
+            "d_developer": "Infinity Ward",
+            "d_doc": "2002-05-01",
+            "d_employees": 444,
+            "d_nationkey": 6,
+            "d_networth": 3000000000}
+    
+            
+    ]
+}
