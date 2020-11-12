@@ -20,5 +20,87 @@
             "g_platform": "Multi-Platform",
             "g_developer": "Rockstar North",
             "g_publisher": "Rockstar Games"}
+            ,
+            {
+            "g_rank": 3,
+            "g_title": "Tetris (EA)", 
+            "g_sales": 100000000, 
+            "g_genre": "Tile-Matching",
+            "g_releasedate": "2006-09-12",
+            "g_platform": "Mobile",
+            "g_developer": "EA Mobile",
+            "g_publisher": "Electronic Arts"}
+            ,
+            {
+            "g_rank": 4,
+            "g_title": "Wii Sports", 
+            "g_sales": 82900000, 
+            "g_genre": "Sports",
+            "g_releasedate": "2006-11-19",
+            "g_platform": "Wii",
+            "g_developer": "Nintendo EAD",
+            "g_publisher": "Nintendo"}
+            ,
+            {
+            "g_rank": 5,
+            "g_title": "PUBG", 
+            "g_sales": 60000000, 
+            "g_genre": "Battle Royale",
+            "g_releasedate": "2017-12-20",
+            "g_platform": "Multi-Platform",
+            "g_developer": "PUBG Corporation",
+            "g_publisher": "PUBG Corporation"}
+            ,
+            {
+            "g_rank": 6,
+            "g_title": "Super Mario Bros", 
+            "g_sales": 48240000, 
+            "g_genre": "Platform",
+            "g_releasedate": "1985-09-13",
+            "g_platform": "Multi-Platform",
+            "g_developer": "Nintendo",
+            "g_publisher": "Nintendo"}
+            ,
+            {
+            "g_rank": 7,
+            "g_title": "Pokemon Red/Green/Blue/Yellow", 
+            "g_sales": 47520000, 
+            "g_genre": "RPG",
+            "g_releasedate": "1996-02-27",
+            "g_platform": "Multi-Platform",
+            "g_developer": "Game Freak",
+            "g_publisher": "Nintendo"}
+            ,
+            {
+            "g_rank": 8,
+            "g_title": "Wii Fit", 
+            "g_sales": 43800000, 
+            "g_genre": "Fitness",
+            "g_releasedate": "2007-12-01",
+            "g_platform": "Wii",
+            "g_developer": "Nintendo EAD",
+            "g_publisher": "Nintendo"}
+            ,
+            {
+            "g_rank": 9,
+            "g_title": "Tetris (Nintendo)", 
+            "g_sales": 43000000, 
+            "g_genre": "Tile-Matching",
+            "g_releasedate": "1989-06-14",
+            "g_platform": "GameBoy/NES",
+            "g_developer": "Nintendo R&D1",
+            "g_publisher": "Nintendo"}
+            ,
+            {
+            "g_rank": 10,
+            "g_title": "Pac-Man", 
+            "g_sales": 39098000, 
+            "g_genre": "Maze",
+            "g_releasedate": "1980-07-01",
+            "g_platform": "Multi-Platform",
+            "g_developer": "Namco",
+            "g_publisher": "Namco"}
+            
+            
     ]
 }
