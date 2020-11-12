@@ -1,0 +1,24 @@
+{
+    
+    "Games":[
+            {
+            "g_rank": 1,
+            "g_title": "Minecraft", 
+            "g_sales": 200000000, 
+            "g_genre": "Adventure",
+            "g_releasedate": "2011-11-18",
+            "g_platform": "Multi-Platform",
+            "g_developer": "Mojang Studios",
+            "g_publisher": "Mojang Studios"}
+            ,
+            {
+            "g_rank": 2,
+            "g_title": "Grand Theft Auto V", 
+            "g_sales": 130000000, 
+            "g_genre": "Action",
+            "g_releasedate": "2013-09-17",
+            "g_platform": "Multi-Platform",
+            "g_developer": "Rockstar North",
+            "g_publisher": "Rockstar Games"}
+    ]
+}
