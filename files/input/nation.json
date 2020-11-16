@@ -40,6 +40,11 @@
             "n_nationkey": 7,
             "n_name": "POLAND",
             "n_regionkey": 3}
+            ,
+            {
+            "n_nationkey": 8,
+            "n_name": "CANADA",
+            "n_regionkey": 1}
             
     ]
 }

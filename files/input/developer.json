@@ -97,6 +97,34 @@
             "d_employees": 444,
             "d_nationkey": 6,
             "d_networth": 3000000000}
+            ,
+            {
+            "d_developer": "Treyarch",
+            "d_doc": "1996-01-01",
+            "d_employees": 620,
+            "d_nationkey": 6,
+            "d_networth": 10000000}
+            ,
+            {
+            "d_developer": "Good Science Studio",
+            "d_doc": "2009-01-01",
+            "d_employees": 10,
+            "d_nationkey": 6,
+            "d_networth": 1000000}
+            ,
+            {
+            "d_developer": "Good Science Studio",
+            "d_doc": "2009-01-01",
+            "d_employees": 10,
+            "d_nationkey": 6,
+            "d_networth": 1000000}
+            ,
+            {
+            "d_developer": "EA Canada",
+            "d_doc": "1983-01-01",
+            "d_employees": 1300,
+            "d_nationkey": 8,
+            "d_networth": 1040000000}
     
             
     ]

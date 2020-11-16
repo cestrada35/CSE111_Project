@@ -100,6 +100,226 @@
             "g_platform": "Multi-Platform",
             "g_developer": "Namco",
             "g_publisher": "Namco"}
+            ,
+            {
+            "g_rank": 11,
+            "g_title": "Mario Kart Wii", 
+            "g_sales": 37320000, 
+            "g_genre": "Racing",
+            "g_releasedate": "2008-04-10",
+            "g_platform": "Wii",
+            "g_developer": "Nintendo EAD",
+            "g_publisher": "Nintendo"}
+            ,
+            {
+            "g_rank": 12,
+            "g_title": "Mario Kart 8", 
+            "g_sales": 33220000, 
+            "g_genre": "Racing",
+            "g_releasedate": "2014-05-29",
+            "g_platform": "Wii U / Switch",
+            "g_developer": "Nintendo EAD",
+            "g_publisher": "Nintendo"}
+            ,
+            {
+            "g_rank": 13,
+            "g_title": "Wii Sports Resort", 
+            "g_sales": 33130000, 
+            "g_genre": "Sports",
+            "g_releasedate": "2009-04-25",
+            "g_platform": "Wii",
+            "g_developer": "Nintendo EAD",
+            "g_publisher": "Nintendo"}
+            ,
+            {
+            "g_rank": 14,
+            "g_title": "Red Dead Redemption 2", 
+            "g_sales": 31000000, 
+            "g_genre": "Action",
+            "g_releasedate": "2018-10-26",
+            "g_platform": "Multi-Platform",
+            "g_developer": "Rockstar Studios",
+            "g_publisher": "Rockstar Games"}
+            ,
+            {
+            "g_rank": 15,
+            "g_title": "New Super Mario Bros.", 
+            "g_sales": 30800000, 
+            "g_genre": "Platform",
+            "g_releasedate": "2006-05-15",
+            "g_platform": "Nintendo DS",
+            "g_developer": "Nintendo EAD",
+            "g_publisher": "Nintendo"}
+            ,
+            {
+            "g_rank": 16,
+            "g_title": "Terraria", 
+            "g_sales": 30300000, 
+            "g_genre": "Adventure",
+            "g_releasedate": "2011-05-16",
+            "g_platform": "Multi-Platform",
+            "g_developer": "Re-Logic",
+            "g_publisher": "Re-Logic/505 Games"}
+            ,
+            {
+            "g_rank": 17,
+            "g_title": "New Super Mario Bros Wii", 
+            "g_sales": 30300000, 
+            "g_genre": "Platform",
+            "g_releasedate": "2009-11-11",
+            "g_platform": "Wii",
+            "g_developer": "Nitendo EAD",
+            "g_publisher": "Nintendo"}
+            ,
+            {
+            "g_rank": 18,
+            "g_title": "The Elder Scrolls V: Skyrim", 
+            "g_sales": 30000000, 
+            "g_genre": "Action-RPG",
+            "g_releasedate": "2011-11-11",
+            "g_platform": "Multi-Platform",
+            "g_developer": "Bethesda Game Studios",
+            "g_publisher": "Bethesda Softworks"}
+            ,
+            {
+            "g_rank": 19,
+            "g_title": "Diablo III", 
+            "g_sales": 30000000, 
+            "g_genre": "Hack and Slash",
+            "g_releasedate": "2012-05-16",
+            "g_platform": "Multi-Platform",
+            "g_developer": "Blizzard Entertainment",
+            "g_publisher": "Blizzard Entertainment"}
+            ,
+            {
+            "g_rank": 20,
+            "g_title": "Pokemon Gold/Silver/Crystal", 
+            "g_sales": 29490000, 
+            "g_genre": "RPG",
+            "g_releasedate": "1999-11-21",
+            "g_platform": "GameBoy Color",
+            "g_developer": "Game Freak",
+            "g_publisher": "Nintendo"}
+            ,
+            {
+            "g_rank": 21,
+            "g_title": "Duck Hunt", 
+            "g_sales": 28300000, 
+            "g_genre": "Light-Gun Shooter",
+            "g_releasedate": "1984-04-21",
+            "g_platform": "NES",
+            "g_developer": "Nintendo R&D1",
+            "g_publisher": "Nintendo"}
+            ,
+            {
+            "g_rank": 22,
+            "g_title": "Wii Play", 
+            "g_sales": 28020000, 
+            "g_genre": "Party",
+            "g_releasedate": "2006-12-02",
+            "g_platform": "Wii",
+            "g_developer": "Nintendo EAD",
+            "g_publisher": "Nintendo"}
+            ,
+            {
+            "g_rank": 23,
+            "g_title": "The Witcher 3", 
+            "g_sales": 28000000, 
+            "g_genre": "Action-RPG",
+            "g_releasedate": "2015-05-19",
+            "g_platform": "Multi-Platform",
+            "g_developer": "CD Projekt Red",
+            "g_publisher": "CD Projekt"}
+            ,
+            {
+            "g_rank": 24,
+            "g_title": "Grand Theft Auto: San Andreas", 
+            "g_sales": 27500000, 
+            "g_genre": "Action",
+            "g_releasedate": "2004-10-26",
+            "g_platform": "Multi-Platform",
+            "g_developer": "Rockstar North",
+            "g_publisher": "Rockstar Games"}
+            ,
+            {
+            "g_rank": 25,
+            "g_title": "Call of Duty: Modern Warfare 3", 
+            "g_sales": 26500000, 
+            "g_genre": "FPS",
+            "g_releasedate": "2011-11-08",
+            "g_platform": "Multi-Platform",
+            "g_developer": "Infinity Ward",
+            "g_publisher": "Activision"}
+            ,
+            {
+            "g_rank": 26,
+            "g_title": "Call of Duty: Black Ops", 
+            "g_sales": 26200000, 
+            "g_genre": "FPS",
+            "g_releasedate": "2010-11-09",
+            "g_platform": "Multi-Platform",
+            "g_developer": "Treyarch",
+            "g_publisher": "Activision"}
+            ,
+            {
+            "g_rank": 27,
+            "g_title": "Grand Theft Auto IV", 
+            "g_sales": 25000000, 
+            "g_genre": "Action",
+            "g_releasedate": "2008-04-29",
+            "g_platform": "Multi-Platform",
+            "g_developer": "Rockstar North",
+            "g_publisher": "Rockstar Games"}
+            ,
+            {
+            "g_rank": 28,
+            "g_title": "Pokemon Sun/Moon", 
+            "g_sales": 24950000, 
+            "g_genre": "RPG",
+            "g_releasedate": "2016-11-18",
+            "g_platform": "Nintendo 3DS",
+            "g_developer": "Game Freak",
+            "g_publisher": "Nintendo"}
+            ,
+            {
+            "g_rank": 29,
+            "g_title": "Pokemon Diamond/Pearl/Platinum", 
+            "g_sales": 24730000, 
+            "g_genre": "RPG",
+            "g_releasedate": "2006-09-28",
+            "g_platform": "Nintendo DS",
+            "g_developer": "Game Freak",
+            "g_publisher": "Nintendo"}
+            ,
+            {
+            "g_rank": 30,
+            "g_title": "Call of Duty: Black Ops II", 
+            "g_sales": 24200000, 
+            "g_genre": "FPS",
+            "g_releasedate": "2012-11-12",
+            "g_platform": "Multi-platform",
+            "g_developer": "Treyarch",
+            "g_publisher": "Activision"}
+            ,
+            {
+            "g_rank": 31,
+            "g_title": "Kinect Adventures!", 
+            "g_sales": 24000000, 
+            "g_genre": "Adventure",
+            "g_releasedate": "2010-11-04",
+            "g_platform": "Xbox 360",
+            "g_developer": "Good Science Studio",
+            "g_publisher": "Xbox Game Studios"}
+            ,
+            {
+            "g_rank": 32,
+            "g_title": "FIFA 18", 
+            "g_sales": 24000000, 
+            "g_genre": "Sports",
+            "g_releasedate": "2017-09-29",
+            "g_platform": "Multi-platform",
+            "g_developer": "EA Canada",
+            "g_publisher": "Electronic Arts"}
             
             
     ]

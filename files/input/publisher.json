@@ -84,5 +84,12 @@
             "p_employees": 9200, 
             "p_nationkey": 6,
             "p_networth": 50000000000}
+            ,
+            {
+            "p_publisher": "Xbox Game Studios",
+            "p_doc": "2000-03-01", 
+            "p_employees": 2433, 
+            "p_nationkey": 6,
+            "p_networth": 37450000000}
     ]
 }
