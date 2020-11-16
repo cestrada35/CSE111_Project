@@ -11,29 +11,50 @@ CREATE TABLE Game(
     g_publisher varchar not null
 );
 CREATE TABLE Publisher(
-    p_publisher VARCHAR(32) not null,
+    p_publisher VARCHAR(32) PRIMARY KEY,
     p_doc date not null,
     p_employees integer not null,
     p_nationkey decimal(3,0),
     p_networth integer not null
 );
 CREATE TABLE Developer(
-    d_developer VARCHAR(32) not null,
+    d_developer VARCHAR(32) PRIMARY KEY,
     d_doc date not null,
     d_employees integer not null,
     d_nationkey decimal(3,0),
     d_networth integer not null
 );
 CREATE TABLE Nation(
-    n_nationkey decimal(3,0) not null,
+    n_nationkey decimal(3,0) PRIMARY KEY,
     n_name char(25) not null,
     n_regionkey decimal(2,0) not null
 );
 
 CREATE TABLE Region(
-    r_regionkey decimal(2,0) not null,
-    r_name char(25) not null
+    r_regionkey decimal(2,0),
+    r_name char(25)
+);
 
+-- CREATE MANY TO MANY TABLES --
+CREATE TABLE Publisher_Developer(
+p_publisher VARCHAR(32),
+d_developer VARCHAR(32),
+FOREIGN KEY(p_publisher) REFERENCES Developer(p_publisher),
+FOREIGN KEY(d_developer) REFERENCES Developer(d_developer)
+);
+
+CREATE TABLE Publisher_Nation(
+p_publisher VARCHAR(32),
+n_nationkey decimal(3,0),
+FOREIGN KEY(p_publisher) REFERENCES Developer(p_publisher),
+FOREIGN KEY(n_nationkey) REFERENCES Developer(n_nationkey)
+);
+
+CREATE TABLE Developer_Nation(
+d_developer VARCHAR(32),
+n_nationkey decimal(3,0),
+FOREIGN KEY(d_developer) REFERENCES Developer(d_developer),
+FOREIGN KEY(n_nationkey) REFERENCES Developer(n_nationkey)
 );
 
 
@@ -107,7 +128,6 @@ INSERT INTO region VALUES(2, 'ASIA');
 INSERT INTO region VALUES(3, 'EUROPE');
 INSERT INTO region VALUES(4, 'MIDDLE EAST');
 
-
 -- RETURN TABLE CONTENTS --
 SELECT *
 FROM Game;
@@ -126,16 +146,109 @@ FROM nation;
 SELECT *
 FROM region;
 
--- RANDOM SQL COMMANDS FOR VARIETY--
+
+
+
+
+
+-- 20 SAMPLE SQL COMMANDS PHASE 2--
+-- 1    insert Antarctica as a region
 INSERT INTO Region(r_regionkey, r_name)
 VALUES (5, "ANTARCTICA")
-
+-- 2   change antarctica to poland based on key
 UPDATE Region
 SET r_name = "Poland"
 WHERE r_regionkey = 5
-
+-- 3    delete poland from the region table
 DELETE FROM Region
 WHERE r_name = "Poland"
+-- 4    return all the games that "Mojang Studios" have developed
+SELECT  g_title
+FROM    Game, Developer
+WHERE   g_developer = d_developer
+AND     d_developer = 'Mojang Studios'
+-- 5     return all the games that were developed in Japan
+SELECT  g_title
+FROM    Game, Developer, Nation
+WHERE   g_developer = d_developer
+AND     d_nationkey = n_nationkey
+AND     n_name = "JAPAN"
+-- 6     return all publishers located in the U.S.
+SELECT  p_publisher as Publishers
+FROM    Publisher
+WHERE   p_nationkey = 6
+-- 7    return the publisher in the U.S. and Sweden
+SELECT  p_publisher
+FROM    Publisher
+WHERE   p_nationkey = 6
+UNION 
+SELECT  p_publisher
+FROM    Publisher
+WHERE   p_nationkey = 4
+-- 8     return the salary of the highest grossing developer
+SELECT  MAX(d_networth)
+FROM    Developer
+-- 9     return the name of the developer that makes the most that is located in the U.S.
+SELECT Name
+FROM    (SELECT  MAX(d_networth), d_developer as Name
+         FROM    Developer
+         WHERE   d_nationkey = 6)
+-- 10    return all developers that are not located in the U.S.
+SELECT  d_developer
+FROM    Developer, Nation
+WHERE   d_nationkey = n_nationkey
+EXCEPT 
+SELECT  d_developer
+FROM    Developer, Nation
+WHERE   d_nationkey = n_nationkey
+AND     d_nationkey  = 6
+-- 11    return all the games that sold over 85 million copies
+SELECT  g_title
+FROM    Game
+WHERE   g_sales > 85000000
+-- 12    publishers that were established after the year 1995
+SELECT  p_publisher as Publishers
+FROM    Publisher
+WHERE   (p_doc > '1995-01-01')
+-- 13    insert Clash of clans for fun
+INSERT INTO Game(g_rank, g_title, g_sales, g_genre, g_releasedate, g_platform, g_developer, g_publisher)
+VALUES (33, "Clash of Clans", 1, "Action", '2000-01-01', "Mobile", "Super Cell", "Google Play")
+-- 14   change Clash of clans to Clash royale
+UPDATE Game
+SET g_title = "Clash Royale"
+WHERE g_title = "Clash of Clans"
+-- 15    delete Clash Royale from the database
+DELETE FROM Game
+WHERE g_title = "Clash Royale"
+-- 16   return only the top 10 games in descending order
+SELECT  g_title as Rank
+FROM    Game
+ORDER BY g_sales DESC
+LIMIT 10
+-- 17   return games and their sales, that were released from 2010 to 2015
+SELECT  g_title as Game, g_sales as Total
+FROM    Game
+WHERE g_releasedate
+BETWEEN '2010-01-01' AND '2015-12-30'
+-- 18   return all games whose developers were located in ASIA
+SELECT  g_title as Game
+FROM    Game, Developer, Nation, Region
+WHERE   g_developer = d_developer
+AND     d_nationkey = n_nationkey
+AND     n_regionkey = r_regionkey
+AND     r_regionkey = 2
+-- 19   return everything from every table combined!
+SELECT  *
+FROM    Game, Developer, Publisher, Nation, Region
+WHERE   g_developer = d_developer
+AND     g_publisher = p_publisher
+AND     d_nationkey = n_nationkey
+AND     n_regionkey = r_regionkey
+-- 20   return all multi-platform titles and their sales
+SELECT  g_title as Game,  g_sales as Total
+FROM    Game
+WHERE   g_platform = 'Multi-Platform'
+
 
 -- DELETING TABLES --
 DROP TABLE Game;
