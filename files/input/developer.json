@@ -1,6 +1,7 @@
 {
     "Developer":[
             {
+            "id": 1,
             "d_developer": "Mojang Studios",
             "d_doc": "2009-05-01",
             "d_employees": 70,
@@ -8,6 +9,7 @@
             "d_networth": 1500000000}
             ,
             {
+            "id": 2,
             "d_developer": "Rockstar North",
             "d_doc": "2001-11-01",
             "d_employees": 650,
@@ -15,6 +17,7 @@
             "d_networth": 3500000000}
             ,
             {
+            "id": 3,
             "d_developer": "EA Mobile",
             "d_doc": "2004-01-01",
             "d_employees": 800,
@@ -22,6 +25,7 @@
             "d_networth": 5500000000}
             ,
             {
+            "id": 4,
             "d_developer": "Nintendo EAD",
             "d_doc": "1983-09-30",
             "d_employees": 6200,
@@ -29,6 +33,7 @@
             "d_networth": 85000000000}
             ,
             {
+            "id": 5,
             "d_developer": "PUBG Corporation",
             "d_doc": "2017-09-01",
             "d_employees": 1000,
@@ -36,6 +41,7 @@
             "d_networth": 4600000000}
             ,
             {
+            "id": 6,
             "d_developer": "Game Freak",
             "d_doc": "1989-04-26",
             "d_employees": 143,
@@ -43,6 +49,7 @@
             "d_networth": 10000000}
             ,
             {
+            "id": 7,
             "d_developer": "Nintendo R&D1",
             "d_doc": "1972-01-01",
             "d_employees": 100,
@@ -50,6 +57,7 @@
             "d_networth": 85000000000}
             ,
             {
+            "id": 8,
             "d_developer": "Namco",
             "d_doc": "1955-06-01",
             "d_employees": 1066,
@@ -57,6 +65,7 @@
             "d_networth": 6400000000}
             ,
             {
+            "id": 9,
             "d_developer": "Rockstar Studios",
             "d_doc": "1998-12-01",
             "d_employees": 2000,
@@ -64,6 +73,7 @@
             "d_networth": 3500000000}
             ,
             {
+            "id": 10,
             "d_developer": "Re-Logic",
             "d_doc": "2011-01-01",
             "d_employees": 10,
@@ -71,6 +81,7 @@
             "d_networth": 100000000}
             ,
             {
+            "id": 11,
             "d_developer": "Bethesda Game Studios",
             "d_doc": "2001-01-01",
             "d_employees": 400,
@@ -78,6 +89,7 @@
             "d_networth": 3000000000}
             ,
             {
+            "id": 12,
             "d_developer": "Blizzard Entertainment",
             "d_doc": "1991-02-01",
             "d_employees": 4700,
@@ -85,6 +97,7 @@
             "d_networth": 20000000000}
             ,
             {
+            "id": 13,
             "d_developer": "CD Projekt Red",
             "d_doc": "2002-02-01",
             "d_employees": 1111,
@@ -92,6 +105,7 @@
             "d_networth": 2300000000}
             ,
             {
+            "id": 14,
             "d_developer": "Infinity Ward",
             "d_doc": "2002-05-01",
             "d_employees": 444,
@@ -99,6 +113,7 @@
             "d_networth": 3000000000}
             ,
             {
+            "id": 15,
             "d_developer": "Treyarch",
             "d_doc": "1996-01-01",
             "d_employees": 620,
@@ -106,6 +121,7 @@
             "d_networth": 10000000}
             ,
             {
+            "id": 16,
             "d_developer": "Good Science Studio",
             "d_doc": "2009-01-01",
             "d_employees": 10,
@@ -113,6 +129,7 @@
             "d_networth": 1000000}
             ,
             {
+            "id": 17,
             "d_developer": "Good Science Studio",
             "d_doc": "2009-01-01",
             "d_employees": 10,
@@ -120,12 +137,36 @@
             "d_networth": 1000000}
             ,
             {
+            "id": 18,
             "d_developer": "EA Canada",
             "d_doc": "1983-01-01",
             "d_employees": 1300,
             "d_nationkey": 8,
             "d_networth": 1040000000}
+            ,
+            {
+            "id": 19,
+            "d_developer": "Konami",
+            "d_doc": "1969-03-21",
+            "d_employees": 10454,
+            "d_nationkey": 1,
+            "d_networth": 3500000000}
+            ,
+            {
+            "id": 20,
+            "d_developer": "Gearbox Software",
+            "d_doc": "1999-02-16",
+            "d_employees": 811,
+            "d_nationkey": 6,
+            "d_networth": 1200000000}
+            ,
+            {
+            "id": 21,
+            "d_developer": "Sonic Team",
+            "d_doc": "1991-01-01",
+            "d_employees": 171,
+            "d_nationkey": 1,
+            "d_networth": 2500000000}
     
-            
     ]
 }

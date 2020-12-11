@@ -1,3 +1,14 @@
+-- DROP TABLES --
+DROP TABLE Developer;
+DROP TABLE Game;
+DROP TABLE Nation;
+DROP TABLE Publisher;
+DROP TABLE Region;
+DROP TABLE Publisher_Developer;
+DROP TABLE Publisher_Nation;
+DROP TABLE Developer_Nation;
+DROP TABLE SalesTime;
+
 
 -- CREATE NECESSARY TABLES --
 CREATE TABLE Game(
@@ -57,6 +68,112 @@ FOREIGN KEY(d_developer) REFERENCES Developer(d_developer),
 FOREIGN KEY(n_nationkey) REFERENCES Developer(n_nationkey)
 );
 
+INSERT INTO Publisher_Developer
+VALUES ('Mojang Studios', 'Mojang Studios');
+INSERT INTO Publisher_Developer
+VALUES ('Rockstar Games', 'Rockstar North');
+INSERT INTO Publisher_Developer
+VALUES ('Rockstar Games', 'Rockstar Studios');
+INSERT INTO Publisher_Developer
+VALUES ('Electronic Arts', 'EA Mobile');
+INSERT INTO Publisher_Developer
+VALUES ('Nintendo', 'Nintendo EAD');
+INSERT INTO Publisher_Developer
+VALUES ('PUBG Corporation', 'PUBG Corporation');
+INSERT INTO Publisher_Developer
+VALUES ('Namco', 'Namco');
+INSERT INTO Publisher_Developer
+VALUES ('Re-Logic', 'Re-Logic');
+INSERT INTO Publisher_Developer
+VALUES ('505 Games', 'Good Science Studio');
+INSERT INTO Publisher_Developer
+VALUES ('Bethesda Softworks', 'Bethesda Studios');
+INSERT INTO Publisher_Developer
+VALUES ('Blizzard Entertainment', 'Blizzard Entertainment');
+INSERT INTO Publisher_Developer
+VALUES ('CD Projekt', 'CD Project Red');
+INSERT INTO Publisher_Developer
+VALUES ('Activision', 'Infinity ward');
+INSERT INTO Publisher_Developer
+VALUES ('Activision', 'Treyarch');
+INSERT INTO Publisher_Developer
+VALUES ('Xbox Game Studios', 'Good Science Studio');
+INSERT INTO Publisher_Developer
+VALUES ('Sega', 'Sonic Team');
+INSERT INTO Publisher_Developer
+VALUES ('2k Games', 'Gearbox Software');
+
+INSERT INTO Developer_Nation
+VALUES ('Mojang Studios', 4);
+INSERT INTO Developer_Nation
+VALUES ('Rockstar North', 5);
+INSERT INTO Developer_Nation
+VALUES ('EA Mobile', 6);
+INSERT INTO Developer_Nation
+VALUES ('Nintendo EAD', 1);
+INSERT INTO Developer_Nation
+VALUES ('PUBG Corporation', 3);
+INSERT INTO Developer_Nation
+VALUES ('Game Freak', 1);
+INSERT INTO Developer_Nation
+VALUES ('Nintendo R&D1', 1);
+INSERT INTO Developer_Nation
+VALUES ('Rockstar Studios', 1);
+INSERT INTO Developer_Nation
+VALUES ('Re-Logic', 6);
+INSERT INTO Developer_Nation
+VALUES ('Bethesda Game Studios', 6);
+INSERT INTO Developer_Nation
+VALUES ('Blizzard Entertainment', 6);
+INSERT INTO Developer_Nation
+VALUES ('CD Projekt Red', 7);
+INSERT INTO Developer_Nation
+VALUES ('Infinity Ward', 6);
+INSERT INTO Developer_Nation
+VALUES ('Treyarch', 6);
+INSERT INTO Developer_Nation
+VALUES ('Good Science Studios', 6);
+INSERT INTO Developer_Nation
+VALUES ('Good Science Studios', 6);
+INSERT INTO Developer_Nation
+VALUES ('EA Canada', 8);
+INSERT INTO Developer_Nation
+VALUES ('Konami', 1);
+INSERT INTO Developer_Nation
+VALUES ('Gearbox Software', 6);
+INSERT INTO Developer_Nation
+VALUES ('Sonic Team', 1);
+
+INSERT INTO Publisher_Nation
+VALUES ('Mojang Studios', 4);
+INSERT INTO Publisher_Nation
+VALUES ('Rockstar Games', 6);
+INSERT INTO Publisher_Nation
+VALUES ('Electronic Arts', 6);
+INSERT INTO Publisher_Nation
+VALUES ('Nintendo', 1);
+INSERT INTO Publisher_Nation
+VALUES ('PUBG Corporation', 3);
+INSERT INTO Publisher_Nation
+VALUES ('Namco', 1);
+INSERT INTO Publisher_Nation
+VALUES ('Re-Logic', 6);
+INSERT INTO Publisher_Nation
+VALUES ('505 Games', 0);
+INSERT INTO Publisher_Nation
+VALUES ('Bethesda Softworks', 6);
+INSERT INTO Publisher_Nation
+VALUES ('Blizzard Entertainment', 6);
+INSERT INTO Publisher_Nation
+VALUES ('CD Projekt', 7);
+INSERT INTO Publisher_Nation
+VALUES ('Activision', 6);
+INSERT INTO Publisher_Nation
+VALUES ('Xbox Game Studios', 6);
+INSERT INTO Publisher_Nation
+VALUES ('Sega', 6);
+INSERT INTO Publisher_Nation
+VALUES ('2k Games', 6);
 
 -- POPULATE TABLES MANUALLY --
 INSERT INTO Game VALUES(1, 'Minecraft', 200000000, 'Adventure', '2011-11-18', 'Multi-Platform', 'Mojang Studios', 'Mojang Studios');
@@ -128,6 +245,67 @@ INSERT INTO region VALUES(2, 'ASIA');
 INSERT INTO region VALUES(3, 'EUROPE');
 INSERT INTO region VALUES(4, 'MIDDLE EAST');
 
+INSERT INTO SalesTime
+VALUES (11, 24000, 26200, "Mario Kart Wii")
+INSERT INTO SalesTime
+VALUES (12, 24000, 26100, "Mario Kart 8")
+INSERT INTO SalesTime
+VALUES (13, 24000, 25900, "Wii Sports Resort")
+INSERT INTO SalesTime
+VALUES (14, 24000, 25800, "Red Dead Redemtion 2")
+INSERT INTO SalesTime
+VALUES (15, 24000, 25700, "New Super Mario Bros")
+INSERT INTO SalesTime
+VALUES (16, 24000, 25600, "Terraria")
+INSERT INTO SalesTime
+VALUES (17, 24000, 25500, "New Super Mario Bros Wii")
+INSERT INTO SalesTime
+VALUES (18, 24000, 25400, "The Elder Scrolls V: Skrim")
+INSERT INTO SalesTime
+VALUES (19, 24000, 25300, "Diablo III")
+INSERT INTO SalesTime
+VALUES (20, 24000, 25200, "Pokemon Gold/Silver/Crystal	")
+INSERT INTO SalesTime
+VALUES (21, 24000, 25100, "Duck Hunt")
+INSERT INTO SalesTime
+VALUES (22, 24000, 25000, "Wii Play")
+INSERT INTO SalesTime
+VALUES (23, 24000, 24900, "The Witcher 3")
+INSERT INTO SalesTime
+VALUES (24, 24000, 24800, "Grand Theft Auto: San Andreas")
+INSERT INTO SalesTime
+VALUES (25, 24000, 24700, "Call of Duty: Modern Warfare 3")
+INSERT INTO SalesTime
+VALUES (26, 24000, 24600, "Call of Duty: Black Ops")
+INSERT INTO SalesTime
+VALUES (27, 24000, 24500, "Grand Theft Auto IV")
+INSERT INTO SalesTime
+VALUES (28, 24000, 24400, "Pokemon Sun/Moon")
+INSERT INTO SalesTime
+VALUES (29, 24000, 24300, "Pokemon Diamond/Pearl/Platinum")
+INSERT INTO SalesTime
+VALUES (30, 24000, 24200, "Call of Duty: Black Ops II")
+INSERT INTO SalesTime
+VALUES (31, 24000, 24100, "Kinect Adventures!")
+INSERT INTO SalesTime
+VALUES (32, 24000, 24000, "FIFA 18")
+INSERT INTO SalesTime
+VALUES (33, 24000, 23900, "Sonic the Hedgehog")
+INSERT INTO SalesTime
+VALUES (34, 24000, 23800, "Nintendogs")
+INSERT INTO SalesTime
+VALUES (35, 24000, 23700, "Mario Kart DS")
+INSERT INTO SalesTime
+VALUES (36, 24000, 23600, "Call of Duty: Modern Warfare 2")
+INSERT INTO SalesTime
+VALUES (37, 24000, 23500, "Pokemon Ruby / Sapphire / Emerald")
+INSERT INTO SalesTime
+VALUES (38, 24000, 23400, "Borderlands 2")
+INSERT INTO SalesTime
+VALUES (39, 24000, 23300, "Super Mario World")
+INSERT INTO SalesTime
+VALUES (40, 24000, 23200, "Frogger")
+
 -- RETURN TABLE CONTENTS --
 SELECT *
 FROM Game;
@@ -154,105 +332,117 @@ FROM region;
 -- 20 SAMPLE SQL COMMANDS PHASE 2--
 -- 1    insert Antarctica as a region
 INSERT INTO Region(r_regionkey, r_name)
-VALUES (5, "ANTARCTICA")
+VALUES (5, "ANTARCTICA");
 -- 2   change antarctica to poland based on key
 UPDATE Region
 SET r_name = "Poland"
-WHERE r_regionkey = 5
+WHERE r_regionkey = 5;
 -- 3    delete poland from the region table
 DELETE FROM Region
-WHERE r_name = "Poland"
+WHERE r_name = "Poland";
 -- 4    return all the games that "Mojang Studios" have developed
 SELECT  g_title
 FROM    Game, Developer
-WHERE   g_developer = d_developer
-AND     d_developer = 'Mojang Studios'
+WHERE   g_developer = Developer.id
+AND     d_developer = 'Mojang Studios';
 -- 5     return all the games that were developed in Japan
-SELECT  g_title
+SELECT  g_title as JapanGames
 FROM    Game, Developer, Nation
-WHERE   g_developer = d_developer
+WHERE   g_developer = Developer.id
 AND     d_nationkey = n_nationkey
-AND     n_name = "JAPAN"
+AND     n_name = "JAPAN";
 -- 6     return all publishers located in the U.S.
 SELECT  p_publisher as Publishers
 FROM    Publisher
-WHERE   p_nationkey = 6
+WHERE   p_nationkey = 6;
 -- 7    return the publisher in the U.S. and Sweden
-SELECT  p_publisher
+SELECT  p_publisher as Pubs
 FROM    Publisher
 WHERE   p_nationkey = 6
 UNION 
 SELECT  p_publisher
 FROM    Publisher
-WHERE   p_nationkey = 4
+WHERE   p_nationkey = 4;
 -- 8     return the salary of the highest grossing developer
-SELECT  MAX(d_networth)
-FROM    Developer
+SELECT  MAX(d_networth) as MaxDevWorth, d_developer as Developer
+FROM    Developer;
 -- 9     return the name of the developer that makes the most that is located in the U.S.
-SELECT Name
+SELECT Name as RichestUSDeveloper
 FROM    (SELECT  MAX(d_networth), d_developer as Name
          FROM    Developer
-         WHERE   d_nationkey = 6)
+         WHERE   d_nationkey = 6);
 -- 10    return all developers that are not located in the U.S.
-SELECT  d_developer
+SELECT  d_developer as RichestnonUSDevelopers
 FROM    Developer, Nation
 WHERE   d_nationkey = n_nationkey
 EXCEPT 
 SELECT  d_developer
 FROM    Developer, Nation
 WHERE   d_nationkey = n_nationkey
-AND     d_nationkey  = 6
+AND     d_nationkey  = 6;
 -- 11    return all the games that sold over 85 million copies
-SELECT  g_title
+SELECT  g_title as bestSellers
 FROM    Game
-WHERE   g_sales > 85000000
+WHERE   g_sales > 85000000;
 -- 12    publishers that were established after the year 1995
 SELECT  p_publisher as Publishers
 FROM    Publisher
-WHERE   (p_doc > '1995-01-01')
+WHERE   (p_doc > '1995-01-01');
 -- 13    insert Clash of clans for fun
-INSERT INTO Game(g_rank, g_title, g_sales, g_genre, g_releasedate, g_platform, g_developer, g_publisher)
-VALUES (33, "Clash of Clans", 1, "Action", '2000-01-01', "Mobile", "Super Cell", "Google Play")
+INSERT INTO Game(id, g_rank, g_title, g_sales, g_genre, g_releasedate, g_platform, g_developer, g_publisher)
+VALUES (41, 41, "Clash of Clans", 1, "Action", '2000-01-01', "Mobile", 2, 3);
 -- 14   change Clash of clans to Clash royale
 UPDATE Game
 SET g_title = "Clash Royale"
-WHERE g_title = "Clash of Clans"
+WHERE g_title = "Clash of Clans";
 -- 15    delete Clash Royale from the database
 DELETE FROM Game
-WHERE g_title = "Clash Royale"
+WHERE g_title = "Clash Royale";
 -- 16   return only the top 10 games in descending order
 SELECT  g_title as Rank
 FROM    Game
 ORDER BY g_sales DESC
-LIMIT 10
+LIMIT 10;
 -- 17   return games and their sales, that were released from 2010 to 2015
 SELECT  g_title as Game, g_sales as Total
 FROM    Game
 WHERE g_releasedate
-BETWEEN '2010-01-01' AND '2015-12-30'
+BETWEEN '2010-01-01' AND '2015-12-30';
 -- 18   return all games whose developers were located in ASIA
 SELECT  g_title as Game
 FROM    Game, Developer, Nation, Region
-WHERE   g_developer = d_developer
+WHERE   g_developer = Developer.id
 AND     d_nationkey = n_nationkey
 AND     n_regionkey = r_regionkey
-AND     r_regionkey = 2
+AND     r_regionkey = 2;
 -- 19   return everything from every table combined!
 SELECT  *
 FROM    Game, Developer, Publisher, Nation, Region
-WHERE   g_developer = d_developer
-AND     g_publisher = p_publisher
+WHERE   g_developer = Developer.id
+AND     g_publisher = Publisher.id
 AND     d_nationkey = n_nationkey
-AND     n_regionkey = r_regionkey
+AND     n_regionkey = r_regionkey;
 -- 20   return all multi-platform titles and their sales
 SELECT  g_title as Game,  g_sales as Total
 FROM    Game
 WHERE   g_platform = 'Multi-Platform'
 
 
--- DELETING TABLES --
-DROP TABLE Game;
-DROP TABLE Publisher;
-DROP TABLE Developer;
-DROP TABLE Nation;
-DROP TABLE Region;
+
+--just some more test queries 
+SELECT * FROM Game
+
+INSERT INTO Game
+VALUES (41, 41, 'Toy Story', 200000, 'action', '2018-01-01' , 'Mobile', 4, 5);
+
+DELETE FROM Game
+WHERE g_title = 'Toy Story'
+
+
+SELECT * FROM Nation
+
+INSERT INTO Nation
+VALUES (9, 'EST', 1);
+
+DELETE FROM Nation
+WHERE n_name = 'EST'

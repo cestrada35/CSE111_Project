@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Game Info</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+		<!-- Bulma Version 0.9.0-->
+		<link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css">
+		<link rel="stylesheet" type="text/css" href="https://bulmatemplates.github.io/bulma-templates/css/forum.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+		</script>
+		<style>
+			/* 
+			- Django Backend
+				chose this python framework because its functions simplified the creation of our web page
+				it is what allow us to run from terminal
+			- javascript for our backend
+			- Interactive Single Page UI via Ajax loading data without reloading webpage for faster interaction w/ data
+			*/
+		</style>
+		</head>
+
+		<body>
+			<nav class="navbar is-white">
+				<div class="container">
+					<div class="navbar-menu">
+						<div class="navbar-start">
+							<a class="navbar-item" href="#">Game Sales</a>
+						</div>
+						<div class="navbar-end">
+							<div class="navbar-item">
+								<input class="input" oninput="search()" type="search" name="search" id="search" placeholder="Search">
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<section class="container">
+				<div class="columns">
+					<div class="column is-3">
+						<aside class="menu">
+							<p class="menu-label">
+								Filters
+							</p>
+							<ul class="menu-list">
+								<li onclick="get_games()"><span id="games" class="tag is-medium is-info">Games</span></li>
+								<li onclick="get_sales()"><span id="sales" class="tag is-medium">Sales</span></li>
+								<li onclick="get_dev()"><span id="developer" class="tag is-medium">Developers</span></li>
+								<li onclick="get_pub()"><span id="publisher" class="tag is-medium">Publishers</span></li>
+								<li onclick="get_nations()"><span id="nation" class="tag is-medium">Nations</span></li>
+								<li onclick="get_regions()"><span id="region" class="tag is-medium">Regions</span></li>
+							</ul>
+						</aside>
+					</div>
+					<div class="column is-9">
+						<div class="box content" id="display"><article onclick="get_game_details(1)" class="post"> 
+							<h4 class="is-info">Minecraft</h4><div class="media"><div class="media-content"><div class="content"><p> Rank <span class="tag">1.00000</span> Sales<span class="tag">200000000</span></p></div></div></div></article><article onclick="get_game_details(2)" class="post"> 
+							<h4 class="is-info">Grand Theft Auto V</h4><div class="media"><div class="media-content"><div class="content"><p> Rank <span class="tag">2.00000</span> Sales<span class="tag">130000000</span></p></div></div></div></article><article onclick="get_game_details(3)" class="post"> 
+							<h4 class="is-info">Tetris (EA)</h4><div class="media"><div class="media-content"><div class="content"><p> Rank <span class="tag">3.00000</span> Sales<span class="tag">100000000</span></p></div></div></div></article><article onclick="get_game_details(4)" class="post"> 
+							<h4 class="is-info">Wii Sports</h4><div class="media"><div class="media-content"><div class="content"><p> Rank <span class="tag">4.00000</span> Sales<span class="tag">82900000</span></p></div></div></div></article><article onclick="get_game_details(5)" class="post"> 
+							<h4 class="is-info">PUBG</h4><div class="media"><div class="media-content"><div class="content"><p> Rank <span class="tag">5.00000</span> Sales<span class="tag">60000000</span></p></div></div></div></article><article onclick="get_game_details(6)" class="post"> 
+							<h4 class="is-info">Super Mario Bros</h4><div class="media"><div class="media-content"><div class="content"><p> Rank <span class="tag">6.00000</span> Sales<span class="tag">48240000</span></p></div></div></div></article><article onclick="get_game_details(7)" class="post"> 
+							<h4 class="is-info">Pokemon Red/Green/Blue/Yellow</h4><div class="media"><div class="media-content"><div class="content"><p> Rank <span class="tag">7.00000</span> Sales<span class="tag">47520000</span></p></div></div></div></article><article onclick="get_game_details(8)" class="post"> 
+							<h4 class="is-info">Wii Fit</h4><div class="media"><div class="media-content"><div class="content"><p> Rank <span class="tag">8.00000</span> Sales<span class="tag">43800000</span></p></div></div></div></article><article onclick="get_game_details(9)" class="post"> 
+							<h4 class="is-info">Tetris (Nintendo)</h4><div class="media"><div class="media-content"><div class="content"><p> Rank <span class="tag">9.00000</span> Sales<span class="tag">43000000</span></p></div></div></div></article><article onclick="get_game_details(10)" class="post"> 
+							<h4 class="is-info">Pac-Man</h4><div class="media"><div class="media-content"><div class="content"><p> Rank <span class="tag">10.00000</span> Sales<span class="tag">39098000</span></p></div></div></div></article></div>
+					</div>
+				</div>
+			</section>
+			<footer class="footer">
+				<div class="container">
+					<div class="content has-text-centered">
+						<div class="columns is-mobile is-centered">
+							<div class="field is-grouped is-grouped-multiline">
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<script async="" type="text/javascript" src="https://bulmatemplates.github.io/bulma-templates/js/bulma.js"></script>
+			<script>
+				var tr={'g': 'Game ','n': 'Nation ', 'r': 'Region ','d': 'Developer ', 'p': 'Publisher '};
+				document.addEventListener("DOMContentLoaded", get_games());
+	
+				function get_games(){
+					$.ajax({
+						type: "GET",
+						url: "/api/games",
+						data: "",
+						success: function(r){
+							console.log(r);
+							$("#display").empty();
+							make_active("games");
+							g_rows(r);
+						}
+					});
+				}
+	
+				function get_game_details(id){
+					$.ajax({
+						type: "GET",
+						url: "/api/game/"+id.toString(),
+						data: "",
+						success: function(r){
+							console.log(r);
+							$("#display").empty();
+							make_active("games");
+							ht = make_details('game',r);
+							$("#display").append(ht);
+							
+						}
+					});
+				}
+	
+				function get_dev(){
+					$.ajax({
+						type: "GET",
+						url: "/api/devs",
+						data: "",
+						success: function(r){
+							console.log(r);
+							$("#display").empty();
+							make_active("developer");
+							d_rows(r);
+	
+						}
+					});
+				}
+		
+	
+				function get_dev_details(id){
+					$.ajax({
+						type: "GET",
+						url: "/api/developer/"+id.toString(),
+						data: "",
+						success: function(r){
+							console.log(r);
+							$("#display").empty();
+							make_active("developer");
+							ht = make_details('dev',r);
+							$("#display").append(ht);
+						}
+					});
+				}
+	
+				function get_pub(){
+					$.ajax({
+						type: "GET",
+						url: "/api/pubs",
+						data: "",
+						success: function(r){
+							console.log(r);
+							$("#display").empty();
+							make_active("publisher");
+							p_rows(r);
+						}
+					});
+				}
+	
+				function get_pub_details(id){
+					$.ajax({
+						type: "GET",
+						url: "/api/publisher/"+id.toString(),
+						data: "",
+						success: function(r){
+							console.log(r);
+							$("#display").empty();
+							make_active("publisher");
+							ht = make_details('pub',r);
+							$("#display").append(ht);
+						}
+					});
+				}
+
+
+				function get_sales(){
+					$.ajax({
+						type: "GET",
+						url: "/api/salestime",
+						data: "",
+						success: function(r){
+							console.log(r);
+							$("#display").empty();
+							make_active("sales");
+							r.forEach(g => {
+								htm = '<article onclick=get_game_details('+ g.id +') class="post"> <h4 class="is-info">' + g.id +". "+ g.st_game + '</h4>';
+								htm+= '<div class="media"><div class="media-content"><div class="content"><p> All Time <span class="tag">'+ g.st_alltime;
+								htm+= '</span> First Year <span class="tag">'+g.st_firstyear+'</span></p></div></div></div></article>';
+								$("#display").append(htm);
+	
+								
+							});
+						}
+					});
+				}
+
+
+				function get_nations(){
+					$.ajax({
+						type: "GET",
+						url: "/api/nation",
+						data: "",
+						success: function(r){
+							console.log(r);
+							$("#display").empty();
+							make_active("nation");
+							r.forEach(g => {
+								htm = '<article class="post"> <h4 class="is-info">' + g.n_name + '</h4>';
+								$("#display").append(htm);
+							});
+						}
+					});
+				}
+
+				function get_nation_details(id){
+					$.ajax({
+						type: "GET",
+						url: "/api/nations/"+id.toString(),
+						data: "",
+						success: function(r){
+							console.log(r);
+							$("#display").empty();
+							make_active("nations");
+							ht = make_details('nation',r);
+							$("#display").append(ht);
+						}
+					});
+				}
+
+
+				function get_regions(){
+					$.ajax({
+						type: "GET",
+						url: "/api/region",
+						data: "",
+						success: function(r){
+							console.log(r);
+							$("#display").empty();
+							make_active("region");
+							r.forEach(g => {
+								htm = '<article class="post"> <h4 class="is-info">' + g.r_name + '</h4>';
+								$("#display").append(htm);
+							});
+						}
+					});
+				}
+
+				function get_region_details(id){
+					$.ajax({
+						type: "GET",
+						url: "/api/regions/"+id.toString(),
+						data: "",
+						success: function(r){
+							console.log(r);
+							$("#display").empty();
+							make_active("regions");
+							ht = make_details('region',r);
+							$("#display").append(ht);
+						}
+					});
+				}
+				
+
+	
+				function make_active(menu_id){
+					var ids = ["games","developer","publisher","sales", "nation", "region"];
+					ids.forEach(ac => {
+						if(ac==menu_id){
+							document.getElementById(ac).classList.add("is-info");
+						}else{
+							document.getElementById(ac).classList.remove("is-info");
+						}
+						
+					});
+	
+				}
+
+				function capitalize(string) {
+					return [].map.call(string, (char, i) => i ? char : char.toUpperCase()).join('');
+					}
+	
+					function make_details(table,r){
+						if(table=='game'){
+							htm='<h4 class="has-text-centered"> Game: '+r.g_title+'</h4>';
+						}else if(table=='dev'){
+							htm='<h4 class="has-text-centered"> Developer: '+r.d_developer+'</h4>';
+						}else if(table=='pub'){
+							htm='<h4 class="has-text-centered"> Publisher: '+r.p_publisher+'</h4>';
+
+						}else{
+							htm='';
+						}
+						
+							htm += '<table class="table">';
+								$.each(r, function(key,value){
+									tran = key.split("_");
+									k='';
+									tran.forEach(l => {
+										if(l.length==1){
+											k+=tr[l];
+										}else{
+											k+= ' '+ capitalize(l).replace('key','');
+										}
+
+										
+									});
+
+									htm+='<tr><td>'+k+'</td><td>'+value+'</td></tr>';
+								});
+							htm+='</table>';
+
+							return htm;
+
+
+					}
+
+					function g_rows(r){
+						r.forEach(g => {
+								htm = '<article  onclick=get_game_details('+ g.id +') class="post"> <h4 class="is-info">' + g.g_title + '</h4>';
+								htm+= '<div class="media"><div class="media-content"><div class="content"><p> Rank <span class="tag">'+g.g_rank;
+								htm+= '</span> Sales<span class="tag">'+g.g_sales+'</span></p></div></div>';
+								htm+='<div class="media-right"><span class="tag is-warning is-light">game</span></div>';
+								htm+='</div></article>';
+								$("#display").append(htm);
+	
+								
+							});
+
+					}
+
+					function p_rows(r){
+						r.forEach(p => {
+								htm = '<article  onclick=get_pub_details('+ p.id +') class="post"> <h4 class="is-info">' + p.p_publisher + '</h4>';
+								htm+= '<div class="media"><div class="media-content"><div class="content"><p> Employees <span class="tag">'+p.p_employees;
+								htm+= '</span> Net Worth<span class="tag">'+p.p_networth+'</span></p></div></div>';
+								htm+='<div class="media-right"><span class="tag is-warning is-light">publisher</span></div>';
+								htm+='</div></article>';
+								$("#display").append(htm);
+	
+								
+							});
+
+
+					}
+
+					function d_rows(r){
+						r.forEach(dev => {
+								htm = '<article  onclick=get_dev_details('+ dev.id +') class="post"> <h4 class="is-info">' + dev.d_developer + '</h4>';
+								htm+= '<div class="media"><div class="media-content"><div class="content"><p> Employees <span class="tag">'+dev.d_employees;
+								htm+= '</span> Net Worth<span class="tag">'+dev.d_networth+'</span></p></div></div>';
+								htm+='<div class="media-right"><span class="tag is-warning is-light">developer</span></div>';
+								htm+='</div></article>';
+								$("#display").append(htm);
+	
+								
+							});
+
+					}
+
+					function search(){
+						var inp = $('#search').val();
+						setTimeout(function(){console.log(inp);},2000);
+						$("#display").empty();
+						make_active('');
+						if(inp.length>0){
+						$.ajax({
+							type: "POST",
+							url: "/api/search/",
+							data: JSON.stringify({ search: inp }),
+							contentType: "application/json; charset=utf-8",
+							dataType: "json",
+							success: function(r){
+								console.log(r);
+								d_rows(r[0]);
+								p_rows(r[1]);
+								g_rows(r[2]);									
+								}
+							});
+						}else{
+							$("#display").append("<h4 class='has-text-centered'>No Data Found</h4>");
+						}
+				}
+
+			</script>
+		
+	
+	</body>
+</html>
